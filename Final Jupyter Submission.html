@@ -16389,8 +16389,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Measuring-Model-Risk">Measuring Model Risk<a class="anchor-link" href="#Measuring-Model-Risk">&#182;</a></h1><p><font color='grey' size = 4></p>
-<p><strong>Gradient Boosting Quantile Regression</strong></p>
+<h1 id="Predicting-Uncertainty:">Predicting Uncertainty:<a class="anchor-link" href="#Predicting-Uncertainty:">&#182;</a></h1><p><font color='grey' size = 5></p>
+<p><strong>Prediction Intervals from Gradient Boosting Quantile Regression</strong></p>
 
 </div>
 </div>
@@ -16409,7 +16409,7 @@ div#notebook {
 <blockquote><p>What is the difference between actuaries and fortune tellers?</p>
 <p>Answer: Fortune tellers give you point estimates, but actuaries give you <em>prediction intervals</em>.  Both try to predict the future.</p>
 </blockquote>
-<p>Predictive models continue to become more accurate, but for certain applications, the uncertainty of an estimate is as important as the prediction itself. By using prediction intervals, which create a range of values instead of a single number, this uncertainty can be measured using quantile regression.  In insurance and finance where model risk translates to financial gain or loss, predictive analytics practitioners can reduce losses and increase profits by hedging against this risk.</p>
+<p>Models continue to become more accurate, but for certain applications, the uncertainty of an estimate is as important as the prediction itself. By using prediction intervals, which create a range of values instead of a single number, this uncertainty can be measured using quantile regression.  In insurance and finance where model risk translates to financial gain or loss, predictive analytics practitioners can reduce losses and increase profits by hedging against this risk.</p>
 <p>Using gradient boosting, a widely-used machine learning method, three use cases are demonstrated on open-source and reproducible data:</p>
 <ol>
 <li>Add value to actuarial predictive models by creating prediction intervals;</li>
@@ -16474,21 +16474,21 @@ $$(0.1 - 1) \sum\text{(Positive Residuals)} + 0$$<p>This will result in a small 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Gradient-Boosting">Gradient Boosting<a class="anchor-link" href="#Gradient-Boosting">&#182;</a></h3><p>Gradient Boosting is a technique which forms an ensemble of weak learners to create a single prediction.  These weak learners are often decision trees, which means that they can apply to either regression or classification problems.  Each tree is built to correct the error of the previous tree.  This stage-wise approach allows for hundreds or thousands of decision trees to be ensembled together.  A detailed description of the GBM algorithm can be found in chapter 8.2 of <a href="http://faculty.marshall.usc.edu/gareth-james/ISL/">(An Introduction to Statistical Learning)</a></p>
 <p>GBMs are an exceptionally versatile method, but they do not apply to all predictive modeling applications.  Consideration should be taken to the advantages and disadvantages of the modeling method to determine if it will provide the best solution to the predictive analytics problem.</p>
-<p><strong>Advantages</strong></p>
-<ol>
-<li>High prediction accuracy</li>
-<li>Has been empirically shown to succeed on a wide class of problems</li>
-<li>Performs variable selection</li>
-<li>Handles non-linearities, interaction effects, is resilient to outliers, and corrects for missing values</li>
-<li>Deals with class imbalance directly by weighting observations</li>
-</ol>
-<p><strong>Disadvantages</strong></p>
-<ol>
-<li>Requires a large sample size</li>
-<li>Takes longer to train than other methods</li>
-<li>Does not detect linear combinations of features</li>
-<li>Can overfit if not tuned correctly</li>
-</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>High prediction accuracy;</li>
+<li>Has been empirically shown to succeed on a wide class of problems;</li>
+<li>Performs variable selection;</li>
+<li>Handles non-linearities, interaction effects, is resilient to outliers, and corrects for missing values;</li>
+<li>Deals with class imbalance directly by weighting observations.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires a large sample size;</li>
+<li>Can takes longer to train than other methods;</li>
+<li>Does not detect linear combinations of features;</li>
+<li>Can overfit if not tuned correctly.</li>
+</ul>
 
 </div>
 </div>
@@ -17634,8 +17634,7 @@ $$\frac{1}{n}\sum_{1}^{n} Y_i = \frac{1}{n} (\sum_{j = A} Y_i + \sum_{j = B} Y_i
 <p>In this example, the data was relatively small and so training the model took only minutes.  In larger data sets, this training time is often an issue.  If the 75th or 71st percentiles were needed, then a new model would need to be trained.</p>
 <p><strong>Outlier detection is not a substitute for data quality.</strong></p>
 <p>The method of outlier detection relies on learning from good examples in order to detect outliers.  There is nothing that a model can do to improve the situation if the entire data set is of low quality.  Just as with any type of model, the accuracy improves with a larger sample size and more features.  The prediction intervals will be more accurate when the data is better.</p>
-<p><strong>Further Research</strong></p>
-<p>The output of a GBM in a classification setting is a probability, and so in theory prediction intervals can be made to provide an upper and lower bound to this probability; however, in <a href="https://scikit-learn.org/stable/">scikit learn</a> there is no support for quantile regression for classification problems today.  This may be added in the future.</p>
+<h2 id="Further-Research">Further Research<a class="anchor-link" href="#Further-Research">&#182;</a></h2><p>The output of a GBM in a classification setting is a probability, and so in theory prediction intervals can be made to provide an upper and lower bound to this probability; however, in <a href="https://scikit-learn.org/stable/">scikit learn</a> there is no support for quantile regression for classification problems today.  This may be added in the future.</p>
 <p>While this example used Python, quantile regression can be performed in most software packages that allow for custom loss functions.  In R, for instance, this can be done by manually specifying the score function in XGboost.  An explanation of how this can be done is available from <a href="https://towardsdatascience.com/regression-prediction-intervals-with-xgboost-428e0a018b">Benoit Descamps</a>.</p>
 <p>Quantile regression also works for decision trees, random forest, and neural nets.  <a href="https://towardsdatascience.com/quantile-regression-from-linear-models-to-trees-to-deep-learning-af3738b527c3">Max Ghenis</a> published a tutorial in 2018 which describes several of these implementations.</p>
 
