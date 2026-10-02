@@ -1,0 +1,20 @@
+# SamWiki theme contract
+# Theme setup follows GitHub's Jekyll theme guide:
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
+#
+# Strategy: one supported theme, jekyll-theme-cayman, skinned in assets/css/style.scss.
+# Copied from https://github.com/sdcastillo/sdcastillo.github.io :
+#   assets/css/style.scss
+#   _layouts/default.html
+#   _includes/head-custom.html
+#   _includes/samwiki-nav.html
+# Pages home sets `samwiki: true`.
+#
+# This project publishes from the default branch (`master`) at the repository root.
+# GitHub Pages serves it at https://sdcastillo.github.io/Jupyter-Contest/
+
+title: Predicting Uncertainty
+description: Prediction intervals from gradient boosting quantile regression.
+theme: jekyll-theme-cayman
+show_downloads: false
+markdown: kramdown
