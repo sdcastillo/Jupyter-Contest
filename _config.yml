@@ -1,20 +1,42 @@
-# SamWiki theme contract
+# SamWiki skin on Cayman for this project Pages site.
 # Theme setup follows GitHub's Jekyll theme guide:
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
 #
-# Strategy: one supported theme, jekyll-theme-cayman, skinned in assets/css/style.scss.
-# Copied from https://github.com/sdcastillo/sdcastillo.github.io :
+# Pin: remote_theme pages-themes/cayman@v0.2.0
+# Skin files synced from https://github.com/sdcastillo/sdcastillo.github.io (main):
 #   assets/css/style.scss
 #   _layouts/default.html
 #   _includes/head-custom.html
 #   _includes/samwiki-nav.html
-# Pages home sets `samwiki: true`.
+# Pages opt in with front matter `samwiki: true`.
+# Project nav: Home, About, and Code go to the hub. Linktree is
+# https://linktr.ee/samuel.castillo
 #
-# This project publishes from the default branch (`master`) at the repository root.
-# GitHub Pages serves it at https://sdcastillo.github.io/Jupyter-Contest/
+# GitHub Pages publishes from the default branch (`master`) at the repository
+# root (`/`). Live URL: https://sdcastillo.github.io/Jupyter-Contest/
 
 title: Predicting Uncertainty
 description: Prediction intervals from gradient boosting quantile regression.
-theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman@v0.2.0
+url: https://sdcastillo.github.io
+baseurl: /Jupyter-Contest
+samwiki: true
 show_downloads: false
 markdown: kramdown
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      samwiki: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
