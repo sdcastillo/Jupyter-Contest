@@ -4,6 +4,8 @@ Prediction intervals from gradient boosting quantile regression. Sam Castillo’
 
 **Live page:** https://sdcastillo.github.io/Jupyter-Contest/
 
+GitHub Pages publishes this site from the default branch (`master`) at the repository root (`/`).
+
 This is a contest for a data science jupyter notebook sponsored by the Society of Actuaries Predictive Analytics and Futurism Section.
 
 My submission can be viewed below.
